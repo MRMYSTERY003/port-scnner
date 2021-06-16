@@ -1,19 +1,20 @@
+#importing the modules
 import socket
 from IPy import IP
 
 
-def scan(sip, num, rate = 0.3):
+def scan(sip, num, rate = 0.3):         #scanning the targets for the given number of ports
     checked_ip = check_ip(sip)
     for port in range(1, num):
         port_scan(checked_ip, port, rate)
     print('\nscan completed ....')
 
 
-def get_banner(s):
+def get_banner(s):                      # returns the banner if available
     return s.recv(1024)
 
 
-def check_ip(cip):
+def check_ip(cip):                      #converts the web address into ip address and returns it
     try:
         IP(cip)
         return cip
@@ -21,7 +22,7 @@ def check_ip(cip):
         return socket.gethostbyname(cip)
 
 
-def port_scan(sip, port, rate):
+def port_scan(sip, port, rate):         #checking wheather the port is open or not
     try:
         sock = socket.socket()
         sock.settimeout(rate)
