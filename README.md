@@ -5,3 +5,5 @@ port scanner made by python can be used like nmap to find the open ports of the 
 before using this program install a module called IPy using the following command in the command prompt
 pip install IPy
 
+
+youtube video link: https://www.youtube.com/watch?v=7nCfJqX-Uh0
